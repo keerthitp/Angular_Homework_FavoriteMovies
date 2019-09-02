@@ -13,6 +13,8 @@
                                     
                                        <p *ngIf="!editMovie[i]"> {{movie.title}} </p>
                                        <input  *ngIf="editMovie[i]" [(ngModel)]="movie.title" placeholder="movie.title">
+                                       <input  *ngIf="editMovie[i]" [(ngModel)]="movie.description" placeholder="movie.description">
+                                       <input  *ngIf="editMovie[i]" [(ngModel)]="movie.imageUrl" placeholder="movie.imageUrl">
                                     </div>
 
                                     
@@ -29,11 +31,11 @@
     </div>
 
     <div class = "col-md-6" *ngIf="movieToBeDisplayed">
-            <div class="card" style="width: 18rem;" >
-                    <img [src]="movieToBeDisplayed.imageUrl" class="card-img-top" alt="...">
+            <div class="card" style="width: 18rem;" style="width: 25%;" >
+                    <img [src]="movieToBeDisplayed.imageUrl" class="card-img-top" alt="Movie Image">
                     <div class="card-body">
                       <h5 class="card-title"> {{movieToBeDisplayed.title}} </h5>
-                      <p class="card-text">{{movieToBeDisplayed.description}}</p>
+                      <p class="card-text" >{{movieToBeDisplayed.description}}</p>
                      
                     </div>
             </div>
