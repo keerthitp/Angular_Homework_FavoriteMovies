@@ -1,0 +1,49 @@
+
+
+
+<br>
+<div class="row">
+    <div class = "col-md-6">
+
+                        <ul class="list-group">
+                        
+                            <li *ngFor="let movie of movies; let i = index" class="list-group-item" [ngStyle]="{'background-color':movieToBeDisplayed && movie.title==movieToBeDisplayed.title?'#007bff':'white'}">
+                                <div class="row" >
+                                    <div class = "col-md-6">
+                                    
+                                       <p *ngIf="!editMovie[i]"> {{movie.title}} </p>
+                                       <input  *ngIf="editMovie[i]" [(ngModel)]="movie.title" placeholder="movie.title">
+                                    </div>
+
+                                    
+
+                                    <div class = "col-md-6">
+                                        <button *ngIf="!editMovie[i]" (click) = "onViewMovie(i)" class="btn btn-primary">View</button>
+                                        <button *ngIf="!editMovie[i]" (click) = "onEditMovie(i)" class="btn btn-warning">Edit</button>
+                                        <button *ngIf="!editMovie[i]" (click) = "onDeleteMovie(i)" class="btn btn-danger">X</button>
+                                        <button *ngIf="editMovie[i]"  (click) = "onSaveEditedMovie(i)" class ="btn btn-success">Save</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+    </div>
+
+    <div class = "col-md-6" *ngIf="movieToBeDisplayed">
+            <div class="card" style="width: 18rem;" >
+                    <img [src]="movieToBeDisplayed.imageUrl" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"> {{movieToBeDisplayed.title}} </h5>
+                      <p class="card-text">{{movieToBeDisplayed.description}}</p>
+                     
+                    </div>
+            </div>
+
+    </div>
+            
+
+        
+   
+
+
+
+</div>

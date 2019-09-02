@@ -1,0 +1,7 @@
+<form [formGroup] = "movieForm" (ngSubmit)="onSubmit()" ><br>
+    <input formControlName="title" placeholder="Title" class="form"><br>
+    <input formControlName="description" placeholder="Description" class="form"><br>
+    <input formControlName="imageUrl" placeholder="Image" class="form"><br>
+    <button type="submit" class="btn btn-success" style="margin: 10px">Add Movie</button>
+
+</form>
